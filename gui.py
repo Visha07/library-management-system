@@ -3,16 +3,18 @@ from tkinter import ttk
 from tkinter import messagebox
 from tkinter import simpledialog
 import mysql.connector
-
+def conn(){
+    mysql.connector.connect(
+            host="localhost",  # Your MySQL host (use 'localhost' if running locally)
+            user="user",       # Your MySQL username
+            password="yourpassword",       # Your MySQL password
+            database="library_db"  # Name of your MySQL database
+        )
+}
 # Initialize MySQL Database
 def init_db():
     try:
-        conn = mysql.connector.connect(
-            host="localhost",  # Your MySQL host (use 'localhost' if running locally)
-            user="visha",       # Your MySQL username
-            password="Arpan@1234",       # Your MySQL password
-            database="library_db"  # Name of your MySQL database
-        )
+        conn
         cursor = conn.cursor()
         cursor.execute('''CREATE TABLE IF NOT EXISTS books (
                             book_name VARCHAR(255),
@@ -40,8 +42,8 @@ def add_record():
     try:
         conn = mysql.connector.connect(
             host="localhost",
-            user="visha",
-            password="Arpan@1234",
+            user="user",
+            password="password",
             database="library_db"
         )
         cursor = conn.cursor()
