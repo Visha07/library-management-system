@@ -6,8 +6,8 @@ def connect_db():
     try:
         conn = mysql.connector.connect(
             host="localhost",  # Your MySQL server host
-            user="visha",  # Your MySQL user
-            password="Arpan@1234",  # Your MySQL password (empty string is fine if you have no password)
+            user="username",  # Your MySQL user
+            password="yourpassword",  # Your MySQL password (empty string is fine if you have no password)
             database="library_db"  # Your database name
         )
         return conn
